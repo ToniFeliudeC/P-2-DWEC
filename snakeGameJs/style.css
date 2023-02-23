@@ -5,6 +5,14 @@
     align-items: center; 
 }
 
+.title {
+    font-size: 70px;
+    font-weight: 600;
+    color: #fdfdfe;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+      0px 0px 20px #b393d3;
+}
+
 #gameBoard {
     border: 3px solid;
 }
@@ -14,7 +22,6 @@
     justify-content: center;
     background-color: chartreuse;
     width: 20%;
-    font-family: "Permanent Marker", cursive;
     font-size: 100px;
     border-radius: 5%;
     border: 1px solid black;
@@ -23,7 +30,6 @@
 }
 
 #resetBtn {
-    font-family: "Permanent Marker", cursive;
     font-size: 22px;
     width: 100px;
     height: 50px;
