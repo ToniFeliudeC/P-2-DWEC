@@ -1,9 +1,13 @@
+// Constantes
 const LongitudCircuito = 16;
+
+//Variables
 let winnerChoice = "";
 let score = 100;
 let bet = 0;
 
-capybaras = [
+// Array de onjetos que harán de capybaras.
+let capybaras = [
 
     {
         nombre: "Abril",
@@ -24,6 +28,7 @@ capybaras = [
 
 ]
 
+// Función auxiliar que usaremos para generar un número aleatorio en un determinado rango.
 function generateRandom(min = 0, max = 100) {
 
     // find diff
@@ -41,6 +46,7 @@ function generateRandom(min = 0, max = 100) {
     return rand;
 }
 
+// Función que inicia el juego
 function start() {
 
 
@@ -68,6 +74,7 @@ function start() {
     displayScore()
     betWinner()
 
+    // Este intervalo será nuestro bucle principal en el que se ejecutará el juego.
     let intervalo = setInterval(function() {
 
         let avance = generateRandom(-2, 6);
@@ -105,6 +112,7 @@ function start() {
     displayScore();
 }
 
+// Función que elimina todo el contenido de las casillas del tablero
 function clearCasillas() {
     let casillas = document.getElementsByClassName("casillas");
     for (let i = 0; i < casillas.length; i++) {
@@ -112,6 +120,7 @@ function clearCasillas() {
     }
 }
 
+// Función que recorre todas las casillas, y si un capybara está en ella, lo dibuja.
 function mostrarEnCasilla(capybaras) {
 
     let casillas = document.getElementsByClassName("casillas");
@@ -126,11 +135,13 @@ function mostrarEnCasilla(capybaras) {
 
 }
 
+// Función para mostrar el estado actual del score
 function displayScore() {
     let scoreElement = document.getElementsByClassName("score")[0];
     scoreElement.innerHTML = "Score: " + score.toString();
 }
 
+// Función para realizar apuestas, lo que hayamos apostado se nos resta al score
 function betWinner() {
 
     winnerChoice = prompt("Introduce el nombre del capybara que crees que va a ganar");
@@ -140,6 +151,7 @@ function betWinner() {
 
 }
 
+// Función que recorre cada capybara y comprueba si alguno ya ha pasado la línea de meta
 function checkWinner() {
 
     for (let i = 0; i < capybaras.length; i++) {
