@@ -1,25 +1,25 @@
 const LongitudCircuito = 16;
 let winnerChoice = "";
-let score = 10000;
+let score = 100;
 let bet = 0;
 
 capybaras = [
 
     {
         nombre: "Abril",
-        casillaActual: 0
+        casillaActual: 0,
     },
     {
         nombre:"Toni",
-        casillaActual: 0
+        casillaActual: 0,
     },
     {
         nombre:"Alberto",
-        casillaActual: 0
+        casillaActual: 0,
     },
     {
         nombre:"Rafa",
-        casillaActual: 0
+        casillaActual: 0,
     }
 
 ]
@@ -119,7 +119,7 @@ function mostrarEnCasilla(capybaras) {
     for (let i = 0; i < capybaras.length; i++) {
         for (let j = 0; j < casillas.length; j++) {
             if (parseInt(casillas[j].id) === capybaras[i].casillaActual) {
-                casillas[j].innerHTML +=  " " + capybaras[i].nombre + "<img width='100px' height='100px' "+"src='images/capy.png'"+">";
+                casillas[j].innerHTML +=  " " + capybaras[i].nombre + "<img width='30px' height='30px' "+"src='images/capy.png'"+">";
             }
         }
     }
@@ -143,11 +143,9 @@ function betWinner() {
 function checkWinner() {
 
     for (let i = 0; i < capybaras.length; i++) {
-        if (capybaras[i].nombre === winnerChoice && capybaras[i].casillaActual >= LongitudCircuito) {
+        if (capybaras[i].nombre.toLowerCase() === winnerChoice.toLowerCase() && capybaras[i].casillaActual >= LongitudCircuito) {
             score += bet * 10;
         }
     }
-
-    
 
 }
